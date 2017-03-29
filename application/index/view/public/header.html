@@ -1,0 +1,18 @@
+<div class="ladytop">
+            <div class="nav">
+                <div class="left"><a href="/jiehun/"><img src="__IMG__/hunshang.png" alt="wed114婚尚"></a></div>
+                <div class="right">
+                <div class="box">
+                {volist name="cates" id="vo"}
+				<a href="{:url('cate/index','cate_id='.$vo['id'])}" rel='dropmenu209'>{$vo['catename']}</a>
+				{/volist}
+			</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="hotmenu">
+            <div class="con">热门标签：<a href='/jiehun/qiwenqushi/'>奇闻趣事</a> <a href='/jiehun/shenghuomiaozhao/'>生活妙招</a> <a href='/jiehun/xingzuo/'>星座</a> <a href='/jiehun/qinzi/'>亲子</a> <a href='/jiehun/qiche/'>汽车</a> <a href='/jiehun/chongwubaike/'>宠物百科</a> <a href='/jiehun/jiaji/'>家居</a> </div>
+        </div>
+		
+        <!--顶部通栏-->

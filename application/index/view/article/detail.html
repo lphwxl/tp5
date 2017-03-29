@@ -1,0 +1,112 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>伯乐 博客</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="童老师ThinkPHP交流群：484519446" />
+<meta name="description" content="童老师ThinkPHP交流群：484519446" /> 
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+<link href="__CSS__/lady.css" type="text/css" rel="stylesheet" />
+<style type="text/css">
+	div.pages div.plist ul.pagination li span{
+		width:31px;
+		height:28px;
+		text-align:center;
+		display:inline-block;
+	}
+</style>
+<script type='text/javascript' src='__JS__/ismobile.js'></script>
+</head>
+
+<body>
+
+
+         {include file="public/header"}
+
+        <!--顶部通栏-->
+        <script src='/jiehun/goto/my-65547.js' language='javascript'></script>
+
+        <div class="position"><a href="{:url('index/index')}">主页</a> > <a href="#">{$detail['catename']}</a> >  </div>
+
+        <div class="overall">
+            <div class="left">
+                <div class="scrap">
+                    <h1>{$detail['title']}</h1>
+                    <div class="spread">
+                        <span class="writor">发布时间：{:date('Y-m-d',$detail['time'])}</span>
+                        <span class="writor">编辑：{if empty($detail['author'])}{$detail['author']}{else/}原创{/if}</span>
+                        <span class="writor">标签：{$detail['keywords']}
+                            
+                        </span>
+                        <span class="writor">热度：{$detail['click']}</span>
+                    </div>
+                </div>
+
+                <!--百度分享-->
+                <script src='/jiehun/goto/my-65542.js' language='javascript'></script>
+
+                <div class="takeaway">
+                    <span class="btn arr-left"></span>
+                    <p class="jjxq">
+                    	{$detail['desc']}
+					</p>
+                    <span class="btn arr-right"></span>
+                </div>
+
+                  <script src='/jiehun/goto/my-65541.js' language='javascript'></script>
+
+                <div class="substance">
+                	{$detail['content']}
+                </div>
+
+
+                <div class="biaoqian">
+                   
+                </div>
+
+
+
+                <!--相关阅读 -->
+                <div class="xgread">
+                    <div class="til"><h4>相关阅读</h4></div>
+                    <div class="lef"><!--相关阅读主题链接--><script src='/jiehun/goto/my-65540.js' language='javascript'></script></div>
+                    <div class="rig">
+                        <ul>
+                            
+                            <li><a href="" target="_blank"></a></li>
+                         
+
+
+                        </ul>
+                    </div>
+                </div>
+
+                <!--频道推荐-->
+                <div class="hotsnew">
+                    <div class="til"><h4>频道推荐</h4></div>
+                    <ul>
+                        {volist name="resall" id="forevery"}
+                        <li>
+                        	<div class="tu">
+                        		<a href="{:url('article/detail','id='.$forevery['id'])}" target="_blank">
+                        			<img {if !empty($forevery['pic'])}src="{$forevery['pic']}"{else/}src="/static/index/images/error.png"{/if} alt=""/>
+                        		</a>
+                        	</div>
+	                        <p>
+	                       	 	<a href='{:url('article/detail','id='.$forevery['id'])}'>{$forevery['title']}</a>
+	                        </p>
+                        </li>
+                        {/volist}
+                    </ul>
+                </div>		
+            </div>
+
+            {include file="public/right"/}    
+</div>
+		
+        {include file="public/footer"}
+
+
+
+    </body>
+</html>

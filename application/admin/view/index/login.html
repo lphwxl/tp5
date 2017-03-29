@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><!--Head--><head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="description" content="login page">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!--Basic Styles-->
+    <link href="__CSS__/bootstrap.css" rel="stylesheet">
+    <link href="__CSS__/font-awesome.css" rel="stylesheet">
+    <!--Beyond styles-->
+    <link id="beyond-link" href="__CSS__/beyond.css" rel="stylesheet">
+    <link href="__CSS__/demo.css" rel="stylesheet">
+    <link href="__CSS__/animate.css" rel="stylesheet">
+
+</head>
+<!--Head Ends-->
+<!--Body-->
+
+<body>
+    <div class="login-container animated fadeInDown">
+        <form action="{:url('admin/login')}" method="post">
+            <div class="loginbox bg-white" style="border-radius:8px;">
+                <div class="loginbox-title">SIGN IN</div>
+                <div class="loginbox-textbox">
+                    <input class="form-control" placeholder="username" name="username" type="text">
+               		{present name="msg.username"}{$msg['username']}{/present}
+                </div>
+                <div class="loginbox-textbox">
+                    <input class="form-control" placeholder="password" name="password" type="password">
+               		{present name="msg.password" }{$msg['password']}{/present}
+                </div>
+                <div class="loginbox-textbox" style="height:34px;">
+                    <input placeholder="code" name="code" style="
+margin:10px 0;width:80px;float:left;" type="text">
+                	<img src='{:captcha_src()}' onclick="flush()" id='img_src' width="80" height="30" style="float:left;vertical-align:middle;margin-left:10px; cursor:pointer;border-radius:4px;"/>
+                <div style="clear:both;"></div>
+                </div>
+                <div style="width:130px;padding-left:60px;"><span style="color:red;">{present name="msg['code']"}{$msg['code']}{/present}</span></div>
+                <div class="loginbox-submit">
+                    <input class="btn btn-primary btn-block" style="border-radius:6px;" value="Login" type="submit">
+                </div>
+            </div>
+           <div class="logobox">
+                    <p class="text-center" style="font-size:16px;font-weight:bold;line-height:40px;">个人博客登录界面</p>
+                </div>
+        </form>
+    </div>
+    <!--Basic Scripts-->
+    <script >
+    	var img = document.getElementById('img_src');
+    	function flush(){
+    		img.src = '{:captcha_src()}'+'?id='+Math.random();
+    	}
+    </script>
+    
+
+
+
+</body><!--Body Ends--></html>
